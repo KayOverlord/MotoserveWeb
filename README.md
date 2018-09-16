@@ -35,6 +35,8 @@ To serve your Firebase project locally, run the following command from your proj
 then you will see a text that says Local server: http://localhost:5000.
 yours might be different just copy and paste it in your GOOGLE SEARCH BAR.
 ## WELL DONE! TIME TO CODE
+To Deploy just type 
+## firebase deploy
 
 
 
