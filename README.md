@@ -1,7 +1,9 @@
 # MotoserveWeb
-Web project showcasing firebase firestore and storage
+Web project showcasing FirebaseFirestore,FirebaseStorage and Bootbox.js check it out.
 
-https://motoserve-c794e.firebaseapp.com this is the website when deployed.
+https://motoserve-c794e.firebaseapp.com
+
+I tried my best to explain every code hope you get it.
 
 # QUICK TUTORIAL
 # Run Firebase Web App locally For Testing
