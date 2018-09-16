@@ -1,0 +1,133 @@
+
+<html lang="en">
+  <head>
+    <title></title>
+    
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script> 
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
+ <!-- THIS IS REQUIRED IN ORDER TO USE fIREBASE -->
+<script src="/__/firebase/init.js"></script>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+   
+    <section class="headContent">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #01223a;">
+          <a class="navbar-brand" href="#">MotoServe</a>
+          <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <!-- ml-auto  to place the button to the right-->
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                      <button id="sign-out" class="btn btn-danger" onclick="signOut()">Sign-out</button> 
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      
+        
+    </section>
+
+    <div class="container-fluid" id="myDivId">
+
+    <div class="row">
+
+      <div class="col-lg-2">
+
+       <div class="card text-center bg-light" id="BoxEffect" >
+      <h4 class="card-title" id="userN">Hello</h4>
+     <div id="profile"></div>
+     <button type="button" name="" id="alrt"  class="btn btn-primary" btn-lg btn-block>change profile</button>
+     </div>
+     
+     </div>
+
+
+     <div class="col-lg-10">
+    <div class="Card" id="bodyContent" id="BoxEffect">
+      <div class="card-body">
+      <h1>Look for the nearest Car service Branch</h1>
+        <form class="formlist">
+            <div class="form-row align-items-center justify-content-center">
+              <div class = "col-auto my-1">
+              <select class="form-control" name="" id="myProvince" onclick="myProvin()">
+                <option value="Gauteng">Gauteng</option>
+                <option value="Western Cape">Western Cape</option>
+             
+              </select>
+              </div>
+
+              <div class="col-auto my-1">
+              <select class="form-control" name="" id="myCity" onclick="mycity()">
+               <!-- THE DATA FROM control.js/// be placed here -->
+              </select>
+              </div>
+
+              <div class="col-md-1">
+                <button type="button" class="btn btn-primary"  onclick="searchbtn()">Search</button>
+              </div>
+            </div>
+
+            </form>
+
+          <div class="card-deck" id="list-div">
+              <!-- THE DATA FROM control.js///CODE GET will be placed here -->
+          </div>
+          </div>
+        </div>
+      
+        
+        </div>
+  </div>
+</div>      
+      
+ 
+    </div> 
+    <!-- Optional JavaScript -->
+    <script src="./control.js"></script>
+    <script src="./nanobar.js"></script>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+     <!-- bootbox code for dialog this creates the Dialog -->
+    <script type="text/javascript">
+        $(document).ready( function() {
+          $('#alrt').on('click',function(){
+            bootbox.dialog({
+              title:'Update you Profile',
+              message:`<P>You will be notified when your profile is updated.</P>
+              <input type="file" accept="image/*" capture="camera" id="cameraInput"><br>
+              <small id="helpId" class="form-text text-muted">UserName</small>
+              <input id="nameid" class="form-control" type="text" aria-describedby="helpId" placeholder="type in your new User Name">`,
+
+              buttons: {
+                cancel: {
+        label: "UPLOAD!",
+        className: 'btn-danger',
+        callback: function(){
+            startupload();
+                       }
+               }
+            }
+        
+          })
+        })
+        });
+    </script>
+  </body>
+  
+</html>
